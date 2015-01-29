@@ -15,7 +15,7 @@ defmodule Lifemonitor.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Lifemonitor, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: [:phoenix, :cowboy, :logger, :httpoison]]
   end
 
   # Specifies your project dependencies
@@ -23,6 +23,8 @@ defmodule Lifemonitor.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [{:phoenix, "~> 0.8.0"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:oauth2, github: "scrogson/oauth2"},
+     {:httpoison, "0.5.0"}]
   end
 end
