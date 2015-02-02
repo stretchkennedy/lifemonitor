@@ -9,7 +9,7 @@ config(:lifemonitor, Lifemonitor.Endpoint,
                      client_secret: System.get_env("CLIENT_SECRET"),
                      site: "https://googleapis.com",
                      authorize_url: "https://accounts.google.com/o/oauth2/auth",
-                     token_url: "https://accounts.google.com/o/oauth2/auth"]})
+                     token_url: "https://accounts.google.com/o/oauth2/token"]})
 
 # Enables code reloading for development
 config :phoenix, :code_reloader, true
