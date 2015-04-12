@@ -1,6 +1,8 @@
 defmodule Lifemonitor.AuthController do
   use Phoenix.Controller
 
+  require Logger
+
   alias OAuth2.AccessToken
   alias OAuth2.Strategy.AuthCode
 
@@ -38,10 +40,9 @@ defmodule Lifemonitor.AuthController do
     #
     # If you need to make additional resource requests, you may want to store
     # the access token as well.
-    conn
-    |> put_session(:current_user, user)
-    |> put_session(:access_token, token)
-    |> redirect(to: "/")
+    conn = put_session(conn, :current_user, user)
+    conn = put_session(conn, :access_token, token)
+    redirect(conn, to: "/")
   end
 
   defp strategy(conn), do: conn.private.oauth2_strategy

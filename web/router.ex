@@ -23,8 +23,9 @@ defmodule Lifemonitor.Router do
     get "/", PageController, :index
   end
 
-  scope "/auth", alias: Lifemonitor do
+  scope "/auth", Lifemonitor do
     pipe_through [:browser, :auth]
+
     get "/", AuthController, :index
     get "/callback", AuthController, :callback
   end

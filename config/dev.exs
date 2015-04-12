@@ -7,7 +7,7 @@ config(:lifemonitor, Lifemonitor.Endpoint,
        oauth2: {OAuth2.Strategy.AuthCode, [
                      client_id: System.get_env("CLIENT_ID"),
                      client_secret: System.get_env("CLIENT_SECRET"),
-                     site: "https://googleapis.com",
+                     site: "https://www.googleapis.com",
                      authorize_url: "https://accounts.google.com/o/oauth2/auth",
                      token_url: "https://accounts.google.com/o/oauth2/token"]})
 

@@ -1,5 +1,8 @@
 <div class="jumbotron">
-  <h2>Welcome to Phoenix!</h2>
+  <%= if @current_user do %>
+    <h2>Welcome, <%= @current_user["displayName"] %>!</h2>
+    <img src="<%= @current_user["image"]["url"] %>" class="img-circle"/>
+  <% end %>
   <p class="lead">Phoenix is an Elixir Web Framework targeting full-featured, fault tolerant applications with realtime functionality.</p>
 </div>
 
@@ -31,4 +34,3 @@
     </ul>
   </div>
 </div>
-

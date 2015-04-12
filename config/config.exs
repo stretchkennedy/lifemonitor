@@ -6,10 +6,14 @@
 use Mix.Config
 
 # Configures the endpoint
-config :lifemonitor, Lifemonitor.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "XpDG1n7C99JkLHpyJ+Tx1YUOuXbZfUp3RtL+Ny9+EAf4EFCxi+r2VpFwm7vjQc/z",
-  debug_errors: false
+config(:lifemonitor, Lifemonitor.Endpoint,
+       url: [host: "localhost"],
+       secret_key_base: "XpDG1n7C99JkLHpyJ+Tx1YUOuXbZfUp3RtL+Ny9+EAf4EFCxi+r2VpFwm7vjQc/z",
+       debug_errors: false)
+
+config(:lifemonitor, Lifemonitor.Router,
+       session: [store: :cookie,
+                 key: "_lifemonitor_key"])
 
 # Configures Elixir's Logger
 config :logger, :console,
