@@ -1,5 +1,5 @@
 defmodule Lifemonitor.ErrorView do
-  use Lifemonitor.View
+  use Lifemonitor.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found - 404"

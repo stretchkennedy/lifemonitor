@@ -1,5 +1,5 @@
 defmodule Lifemonitor.AuthController do
-  use Phoenix.Controller
+  use Lifemonitor.Web, :controller
 
   require Logger
 

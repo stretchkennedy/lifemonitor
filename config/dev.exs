@@ -1,6 +1,16 @@
 use Mix.Config
 
+
+# Watch static and templates for browser reloading.
+# *Note*: Be careful with wildcards. Larger projects
+# will use higher CPU in dev as the number of files
+# grow. Adjust as necessary.
 config(:lifemonitor, Lifemonitor.Endpoint,
+       watchers: [{Path.expand("node_modules/brunch/bin/brunch"), ["watch"]}],
+       live_reload: [
+         patterns: [~r{priv/static/.*(js|css|png|jpeg|jpg|gif)$},
+               ~r{web/views/.*(ex)$},
+               ~r{web/templates/.*(eex)$}]],
        http: [port: System.get_env("PORT") || 4000],
        debug_errors: true,
        cache_static_lookup: false,
@@ -12,7 +22,7 @@ config(:lifemonitor, Lifemonitor.Endpoint,
                      token_url: "https://accounts.google.com/o/oauth2/token"]})
 
 # Enables code reloading for development
-config :phoenix, :code_reloader, true
+config :lifemonitor, Lifemonitor.Endpoint, code_reloader: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

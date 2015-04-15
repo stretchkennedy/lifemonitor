@@ -1,5 +1,5 @@
 defmodule Lifemonitor.PageController do
-  use Phoenix.Controller
+  use Lifemonitor.Web, :controller
 
   plug :action
 

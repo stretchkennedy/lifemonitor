@@ -1,3 +1,3 @@
 defmodule Lifemonitor.LayoutView do
-  use Lifemonitor.View
+  use Lifemonitor.Web, :view
 end
