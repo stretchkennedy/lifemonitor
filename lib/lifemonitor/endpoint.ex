@@ -12,10 +12,6 @@ defmodule Lifemonitor.Endpoint do
 
   plug Plug.Logger
 
-  # Code reloading will only work if the :code_reloader key of
-  # the :phoenix application is set to true in your config file.
-  plug Phoenix.CodeReloader
-
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
