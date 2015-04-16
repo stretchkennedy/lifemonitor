@@ -40,9 +40,10 @@ defmodule Lifemonitor.AuthController do
     #
     # If you need to make additional resource requests, you may want to store
     # the access token as well.
-    conn = put_session(conn, :current_user, user)
-    conn = put_session(conn, :access_token, token)
-    redirect(conn, to: "/")
+    conn
+    |> put_session(:current_user, user)
+    |> put_session(:access_token, token.access_token)
+    |> redirect(to: "/")
   end
 
   defp strategy(conn), do: conn.private.oauth2_strategy

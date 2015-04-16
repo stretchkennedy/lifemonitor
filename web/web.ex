@@ -15,6 +15,7 @@ defmodule Lifemonitor.Web do
   def view do
     quote do
       use Phoenix.View, root: "web/templates"
+      import Phoenix.Controller, only: [get_flash: 2]
 
       # Import URL helpers from the router
       import Lifemonitor.Router.Helpers
